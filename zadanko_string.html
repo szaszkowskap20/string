@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zadanko string</title>
+</head>
+
+<body>
+
+    <label for="te">Podaj tekst</label><input type="text" id="te"><br>
+    <label for="pa">Podaj parametry</label><input type="text" id="pa"><br>
+    <input type="button" value="length">
+    <input type="button" value="charAt">
+    <input type="button" value="charCodeAt">
+    <input type="button" value="toUpperCase">
+    <input type="button" value="toLowerCase">
+    <input type="button" value="indexOf">
+    <input type="button" value="lastIndexOf">
+    <input type="button" value="substr">
+    <input type="button" value="substring">
+    <input type="button" value="slice">
+    <input type="button" value="replace">
+    <div></div>
+
+
+    <script>
+        const tekst = document.querySelector("input").value
+        const parametr = document.querySelectorAll("input")[1]
+        const pole = document.querySelector('div')
+        const len = document.querySelectorAll("input")[2]
+        const cha = document.querySelectorAll("input")[3]
+        const chCo = document.querySelectorAll("input")[4]
+        const up = document.querySelectorAll("input")[5]
+        const dow = document.querySelectorAll("input")[6]
+        const inO = document.querySelectorAll("input")[7]
+        const laO = document.querySelectorAll("input")[8]
+        const su = document.querySelectorAll("input")[9]
+        const sub = document.querySelectorAll("input")[10]
+        const sl = document.querySelectorAll("input")[11]
+        const re = document.querySelectorAll("input")[12]
+
+        len.addEventListener('click', function () {
+            //let a = tekst.value
+            pole.innerHTML = "Dugos twojego tekstu: " + tekst.length
+
+        })
+        cha.addEventListener('click', function () {
+
+            const pa = parseInt(parametr.value) - 1
+            if (Number.isNaN(pa) || pa < 0 || pa > tekst.length) {
+                pole.innerHTML = "Parametr jest błędnie podany"
+
+            } else {
+                pole.innerHTML = "Znak na pozycji " + parametr.value + ": " + tekst.charAt(pa)
+            }
+        })
+        chCo.addEventListener('click', function () {
+            const pa = parseInt(parametr.value) - 1
+            if (Number.isNaN(pa) || pa < 0 || pa > tekst.length) {
+                pole.innerHTML = "Parametr jest błędnie podany"
+
+            } else {
+                pole.innerHTML = "Kod znaku na pozycji " + parametr.value + ": " + tekst.charCodeAt(pa)
+            }
+        })
+        up.addEventListener('click', function () {
+            pole.innerHTML = tekst.toUpperCase()
+        })
+        dow.addEventListener('click', function () {
+            pole.innerHTML = tekst.toLowerCase()
+        })
+        inO.addEventListener('click', function () {
+            let k = tekst.indexOf(parametr.value)
+            console.log(k)
+            if (k >= 0) {
+                pole.innerHTML = "Szukana fraza znajduje się na pozycji: " + (k + 1)
+
+            } else {
+                pole.innerHTML = "Błędny parametr"
+            }
+
+        })
+        laO.addEventListener('click', function () {
+            let k = tekst.lastIndexOf(parametr.value)
+            console.log(k)
+            if (k >= 0) {
+                pole.innerHTML = "Szukana fraza znajduje sie na pozycji(szukana jest ostatnią spotkaną): " + (
+                    k + 1)
+            } else {
+                pole.innerHTML = "Błędny parametr"
+            }
+
+        })
+        su.addEventListener('click', function () {
+            let tab = parametr.value.split(" ")
+            pole.innerHTML = tekst.substr(tab[0], tab[1])
+        })
+        sub.addEventListener('click', function () {
+            let tab = parametr.value.split(" ")
+            pole.innerHTML = tekst.substring(tab[0], tab[1])
+        })
+        sl.addEventListener('click', function () {
+            let tab = parametr.value.split(" ")
+            pole.innerHTML = tekst.slice(tab[0], tab[1])
+        })
+        re.addEventListener('click', function () {
+            let tab = parametr.value.split(" ")
+            pole.innerHTML = tekst.replace(tab[0], tab[1])
+        })
+    </script>
+
+</body>
+
+</html>
