@@ -6,24 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Zadanko string</title>
+
 </head>
 
 <body>
+    <h1>Metody obiektu string</h1>
+    <main>
+        <section>
+            <label for="te">Podaj tekst</label><input type="text" id="te"><br>
+            <label for="pa">Podaj parametry</label><input type="text" id="pa"><br>
+            <input type="button" value="length">
+            <input type="button" value="charAt">
+            <input type="button" value="charCodeAt">
+            <input type="button" value="toUpperCase">
+            <input type="button" value="toLowerCase">
+            <input type="button" value="indexOf">
+            <input type="button" value="lastIndexOf">
+            <input type="button" value="substr">
+            <input type="button" value="substring">
+            <input type="button" value="slice">
+            <input type="button" value="replace">
+        </section>
 
-    <label for="te">Podaj tekst</label><input type="text" id="te"><br>
-    <label for="pa">Podaj parametry</label><input type="text" id="pa"><br>
-    <input type="button" value="length">
-    <input type="button" value="charAt">
-    <input type="button" value="charCodeAt">
-    <input type="button" value="toUpperCase">
-    <input type="button" value="toLowerCase">
-    <input type="button" value="indexOf">
-    <input type="button" value="lastIndexOf">
-    <input type="button" value="substr">
-    <input type="button" value="substring">
-    <input type="button" value="slice">
-    <input type="button" value="replace">
-    <div></div>
+        <section>
+            <div></div>
+        </section>
+    </main>
+
 
 
     <script>
@@ -96,15 +105,30 @@
         })
         su.addEventListener('click', function () {
             let tab = parametr.value.split(" ")
-            pole.innerHTML = tekst.substr(tab[0], tab[1])
+            if (tab[0] >= 0 && tab[1] < tekst.length) {
+                pole.innerHTML = tekst.substr(tab[0], tab[1])
+            } else {
+                pole.innerHTML = "Błęde parametry"
+            }
+
         })
         sub.addEventListener('click', function () {
             let tab = parametr.value.split(" ")
-            pole.innerHTML = tekst.substring(tab[0], tab[1])
+            if (tab[0] >= 0 && tab[1] < tekst.length) {
+                pole.innerHTML = tekst.substring(tab[0], tab[1])
+            } else {
+                pole.innerHTML = "Błędne parametry"
+            }
+
         })
         sl.addEventListener('click', function () {
+
             let tab = parametr.value.split(" ")
-            pole.innerHTML = tekst.slice(tab[0], tab[1])
+            if (tab[0] >= 0 && tab[1] < tekst.length) {
+                pole.innerHTML = tekst.slice(tab[0], tab[1])
+            } else {
+                pole.innerHTML = "Błędne parametry"
+            }
         })
         re.addEventListener('click', function () {
             let tab = parametr.value.split(" ")
