@@ -84,7 +84,7 @@
         inO.addEventListener('click', function () {
             let k = tekst.indexOf(parametr.value)
             console.log(k)
-            if (k >= 0) {
+            if (k > 0) {
                 pole.innerHTML = "Szukana fraza znajduje się na pozycji: " + (k + 1)
 
             } else {
@@ -95,7 +95,7 @@
         laO.addEventListener('click', function () {
             let k = tekst.lastIndexOf(parametr.value)
             console.log(k)
-            if (k >= 0) {
+            if (k > 0) {
                 pole.innerHTML = "Szukana fraza znajduje sie na pozycji(szukana jest ostatnią spotkaną): " + (
                     k + 1)
             } else {
