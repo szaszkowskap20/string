@@ -39,8 +39,8 @@
                     </div>
                     
                     <section class="text-center m-4 col">
-                        <div class="mb-4 p-5 border border-2 text-light rounded">dzgfjh</div>
-                        <div class="p-5 border border-2 text-light rounded">fsgj</div>
+                        <div class="mb-4 p-5 border border-2 text-light rounded"></div>
+                        <div class="p-5 border border-2 text-light rounded"></div>
                         <input type="button" value="Magiczny przycisk" class="btn btn-lg btn-outline-warning m-5">
                     </section>
                    
@@ -214,26 +214,39 @@
             const parametr = document.querySelectorAll("input")[1]
             let k = tekst.indexOf(parametr.value)
             //console.log(k)
-            if (k >= 0) {
+            console.log(parametr.value)
+            parametr.value
+            if(parametr.value != ""){
+                if (k >= 0) {
                 pole.innerHTML = "Szukana fraza znajduje się na pozycji: " + (k + 1)
 
             } else {
                 pole.innerHTML = "Błędny parametr"
             }
+            }else {
+                pole.innerHTML = "Błędny parametr"
+            }
+            
             div.innerHTML = tablica[5]
 
         })
         laO.addEventListener('click', function () {
             const tekst = document.querySelector("input").value
             const parametr = document.querySelectorAll("input")[1]
-            let k = tekst.lastIndexOf(parametr.value)
-            console.log(k)
-            if (k >= 0) {
+            
+            //console.log(k)
+            if(parametr.value != ""){
+                let k = tekst.lastIndexOf(parametr.value)
+                if (k >= 0) {
                 pole.innerHTML = "Szukana fraza znajduje sie na pozycji(szukana jest ostatnią spotkaną): " + (
                     k + 1)
             } else {
                 pole.innerHTML = "Błędny parametr"
             }
+            }else {
+                pole.innerHTML = "Błędny parametr"
+            }
+          
             div.innerHTML = tablica[6]
 
         })
